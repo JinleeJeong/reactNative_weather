@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -25,3 +24,6 @@ const styles = StyleSheet.create({
     backgroundColor : "blue"
   }
 });
+
+// div > View
+// span > Text 모든 부분 Text 요구
