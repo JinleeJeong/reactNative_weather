@@ -1,29 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import Loading from './Loading';
+import * as Location from 'expo-location';
+export default class extends React.Component {
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <View style={styles.yellow}/>
-      <View style={styles.blue}/>
-    </View>
-  );
+  getLocation = async() => {
+    const location = await Location.getCurrentPositionAsync();
+    console.log(location);
+  }
+  componentDidMount(){
+    this.getLocation();
+  }
+  render() {
+      return (
+      <Loading/>
+      );
+    }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  yellow : {
-    flex : 1,
-    backgroundColor : "yellow"
-  },
-  blue : {
-    flex : 1,
-    backgroundColor : "blue"
-  }
-});
 
 // div > View
 // span > Text 모든 부분 Text 요구
